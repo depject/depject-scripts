@@ -1,0 +1,6 @@
+# depject-scripts
+
+
+## License
+
+MIT

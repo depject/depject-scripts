@@ -1,0 +1,35 @@
+{
+  "name": "depject-scripts",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "https://github.com/depject/depject-scripts",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/depject/depject-scripts.git"
+  },
+  "dependencies": {
+    "depject": "^3.2.0"
+  },
+  "devDependencies": {
+    "browserify": "^14.0.0",
+    "standard": "^8.6.0"
+  },
+  "scripts": {
+    "test": "npm run test:node && npm run test:deps && npm run test:lint",
+    "test:node": "tape test/*.js",
+    "test:lint": "standard",
+    "test:deps": "dependency-check . && dependency-check . --extra --no-dev",
+    "test:coverage": "NODE_ENV=test istanbul cover tape test/*.js",
+    "build": "browserify expose.js > expose.bundle.js"
+  },
+  "standard": {
+    "ignore": [
+      "expose.bundle.js"
+    ],
+    "globals": [
+      "expose"
+    ]
+  },
+  "author": "'Dominic Tarr' <dominic.tarr@gmail.com> (http://dominictarr.com)",
+  "license": "MIT"
+}
